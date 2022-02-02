@@ -8,6 +8,8 @@ let playAndPause = document.getElementById('playAndPause')
 let music_range = document.getElementById('music_range')
 let timeStart = document.getElementById('timeStart')
 let timeEnd = document.getElementById('timeEnd')
+let volBar = document.getElementById('volBar')
+let vol_range = document.getElementById('vol_range')
 
 let tracks = [
   {
@@ -142,4 +144,43 @@ function retroceder() {
 
 function foward() {
   audio.currentTime += 5
+}
+let muted = false
+
+function soundVolume() {
+  if (muted == false) {
+    audio.volume = 0
+    volBar.src = './assets/icons/mute.png'
+    return muted == true
+  } else {
+    audio.volume = vol_range.value / 100
+    volBar.src = './assets/icons/sound.png'
+    return muted == false
+  }
+}
+let volumeLevel
+vol_range.addEventListener('input', volumeChange)
+
+function volumeChange() {
+  audio.volume = vol_range.value / 100
+
+  if (audio.volume == 0) {
+    volBar.src = './assets/icons/mute.png'
+    return muted == true
+  } else {
+    volBar.src = './assets/icons/sound.png'
+    return muted == false
+  }
+}
+
+function volMute() {
+  if (audio.muted == true) {
+    audio.muted = false
+    volBar.src = './assets/icons/sound.png'
+    vol_range.value = 50
+  } else {
+    audio.muted = true
+    volBar.src = './assets/icons/mute.png'
+    vol_range.value = 0
+  }
 }
