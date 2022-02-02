@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyPlayer</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
+  <body>
+    <main>
+      <video id="video" muted loop src=""></video>
+      <div class="container">
+        <div id="logo"></div>
+        <div class="player">
+          <h1 id="song"></h1>
+          <h2 id="artist"></h2>
+          <div id="range">
+            <input id="music_range" type="range" min="0" max="" />
+          </div>
+          <div id="music_time">
+            <p id="timeStart"></p>
+            <p id="timeEnd"></p>
+          </div>
+          <div class="audio_player">
+            <audio id="audio">
+              <source src="" id="audioSource" type="audio/mpeg" />
+            </audio>
+          </div>
+          <!--audio-->
+          <div id="control">
+            <img
+              class="btn"
+              onclick="back()"
+              id="previous"
+              src="./assets/icons/previous.png "
+            />
+            <img
+              class="btn"
+              onclick="retroceder()"
+              id="backward"
+              src="./assets/icons/backward.png "
+            />
+            <img
+              class="btn"
+              onclick="playsong()"
+              id="playAndPause"
+              src="./assets/icons/play.png "
+            />
+            <img
+              class="btn"
+              onclick="foward()"
+              id="foward"
+              src="./assets/icons/foward.png "
+            />
+            <img
+              class="btn"
+              onclick="next()"
+              id="next"
+              src="./assets/icons/Next.png "
+              alt=""
+            />
+          </div>
+
+          <div id="volume">
+            <img
+              class="btn"
+              onclick="volMute()"
+              id="volBar"
+              src="./assets/icons/sound.png "
+            />
+            <input id="vol_range" type="range" min="0" max="100" />
+            <div id="contact">
+              <a
+                href="https://www.linkedin.com/in/luizcarlos-pereira/"
+                target="_blank"
+              >
+                <img class="social" src="./assets/icons/linkedin.svg " />
+              </a>
+
+              <a href="https://github.com/lcarlostpereira" target="_blank">
+                <img class="social" src="./assets/icons/github.svg " />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Container-->
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
